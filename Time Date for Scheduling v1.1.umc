@@ -1,0 +1,433 @@
+[
+Version=1
+]
+[
+ObjTp=FSgntr
+Sgntr=UserMacro
+RelVrs=4.03.15
+IntStrVrs=2
+MinSMWVrs=0
+MinTIOVrs=0
+SavedBy=SMW2.02.10
+]
+[
+ObjTp=Hd
+S0Nd=1
+S1Nd=2
+SLNd=3
+PrNm=Time Date for Scheduling v1.1.umc
+DbVr=53.00.007.00
+DvcDbVr=68.07.002.00
+PgmNm=PAC
+DlrNm=Crestron Electronics
+CltNm=Time and Date for Scheduling v1.1
+Incl=362,378,380,405,407,408,409,478,522,537,554,586,590,611,624,767,830,883,1032,1062,1079,1134,1157,1199,1220,1222,1299,1348,1439,1472,1473,1499,1746,1803,1975,2229,2354,2514,2523,2532,3708,3902,3912,3918,3925,1766,2574,2651,2817,2886,2938,2947,3181,3197,3233,3710,3735,3736,3816,3888,4176,4308,4476,4591,4769,167,168,216,225,248,249,266,
+McNm=Time Date for Scheduling
+SmVr=964
+DvVr=964
+TpN1=1
+TpN2=2
+TpN3=3
+TpN4=4
+TpN5=5
+APg=1
+FltTmp=1
+FpCS=0
+EnType=0
+ZeroOnIoOk=0
+Cmn1=SIMPLWINDOWS NAME: Time Date for Scheduling\\\\CATEGORY: TIMERS\\
+Cmn2=\\VERSION: 1.0\\\\SUMMARY: Provides the time and date every second.
+Cmn3=\\\\\\GENERAL NOTES: This module provides analog outputs that represent||1
+Cmn4=the current\\time. These outputs can be used to compare a schedule||1
+Cmn5=against. It is only necessary\\to use the outputs that you want||1
+Cmn6=or need. If you are scheduling something only\\to the minute(10:
+Cmn7=25 AM) then don't use the seconds output.\\\\Setting the Enable==1||1
+Cmn8=high will cause the time to be checked every second. The\\Seconds||1
+Cmn9=analog output will be updated every second. When the seconds are||1
+Cmn10=0, the\\minutes will be checked and the Minutes analog output will||1
+Cmn11=be updated. When the\\minutes are 0, the hour is checked and the||1
+Cmn12=Hours output is updated. If any of these\\change, the Time$ serial||1
+Cmn13=output will be updated. When the hours\\are 0 the day of the month||1
+Cmn14=and the day of the week will be checked and the Day and\\Day_Of_The_Week||1
+Cmn15=analog outputs will be updated. If the day changes, the Day Of The\\
+Cmn16=Week$ output will be updated. When the day of the month is 1, the||1
+Cmn17=month will be\\checked and the Month analog output will be updated.
+Cmn18=||1When the month is 1, the year\\will be checked and the Year analog||1
+Cmn19=output will be updated. If any of the date changes,\\theDate$ serial||1
+Cmn20=output will be updated.\\\\All of these will be checkedand updated||1
+Cmn21=at system boot up.\\\\All of these can be updated at any time by||1
+Cmn22=pulsing the Refresh input. This normally\\would only be used if||1
+Cmn23=a touch panel is unplugged and plugged back in.\\\\CRESTRON HARDWARE||1
+Cmn24=REQUIRED: PRO, AV, PRO2, AV2, CP2, CP2E\\\\\\INPUT DESCRIPTIONS:
+Cmn25=||1\\\\Name                       Type Description\\Enable==1||5
+Cmn26=||?D  While high will allow the current time and date||1
+Cmn27=to be acquired\\                                from the control||1
+Cmn28=system. It will check the seconds every second.\\||?
+Cmn29=||ADefault is enabled.\\Display_Time_In_24Hr==0||3
+Cmn30=||3D  Holding high will display the time in 24 hour format Holding||1
+Cmn31=low\\                                will display the time in 12||1
+Cmn32=hour format. Default is 12 hour format.\\Display_Time_With_Seconds==0||1
+Cmn33=D  Holding high will display the time with seconds. Holding low||1
+Cmn34=will\\                                display the time without seconds.
+Cmn35=||1Default is without seconds.\\Display_Date_In_Long==1      D  Holding||1
+Cmn36=high will display the date with the month as a name. If\\||7
+Cmn37=||IDisplay_Date_In_Short is high this must||1
+Cmn38=be low. Default is Long.\\Display_Date_In_Short==0     D  Holding||1
+Cmn39=high will display the date with the month as a number. If\\||5
+Cmn40=||KDisplay_Date_In_Long is high this must||1
+Cmn41=be low. Default is Long.\\Display_Date_In_4_Digits==1  D  Holding||1
+Cmn42=high will display the date with the year as 4 digits. If\\||6
+Cmn43=||JDisplay_Date_In_2_Digits is high this||1
+Cmn44=must be low. Default is 4 digits.\\Display_Date_In_2_Digits==0||2
+Cmn45=D  Holding high will display the date with the year as 2 digits.
+Cmn46=||1If\\                                Display_Date_In_4_Digits is||1
+Cmn47=high this must be low. Default is 4 digits.\\Refresh||<
+Cmn48=||:D  This will update all outputs.\\\\OUTPUT DESCRIPTIONS:
+Cmn49=||1\\\\Name       Type Description\\Month        A  Number 1 to 12||1
+Cmn50=representing the current month.\\Day          A  Number 1 to 31||1
+Cmn51=representing the current day.\\Year         A  Number representing||1
+Cmn52=the current year.\\Day_Of_Week  A  Number 0(Sunday) to 6(Saturday)||1
+Cmn53=representing the current day of the week.\\Hours        A  Number||1
+Cmn54=0 to 23 representing the current hour.\\Minutes      A  Number 0||1
+Cmn55=to 59 representing the current minutes.\\Seconds      A  Number||1
+Cmn56=0 to 59 representing the current seconds.\\Date$        S  Serial||1
+Cmn57=string representing the current date. Long = "June 30, 2001". Short||1
+Cmn58== "6/30/2001".\\Time$        S  Serial string representing the current||1
+Cmn59=time. 24 HR w/seconds = "134032". 12 HR w/seconds = "01:40:32 PM".
+Cmn60=\\Day_Of_Week$ S  Serial string representing the current day of||1
+Cmn61=the week. "Thursday"\\\\\\PRO OPS USED FOR TESTING: 5.12.63x\\PRO2||1
+Cmn62=OPS USED FOR TESTING: {{**{{v2.000 (RELEASE)}}**}}\\\\COMPILER USED FOR TESTING:
+Cmn63=||1SimplWindows Ver 2.02.10\\\\SAMPLE PROGRAM: PRO       End of Class||1
+Cmn64=Time Demo PRO.smw\\                2-SERIES  End of Class Time Demo.
+Cmn65=smw\\\\REVISION HISTORY: None
+]
+[
+ObjTp=Bk
+Nm1=\
+Sx1=0
+Sy1=0
+Mx1=0
+]
+[
+ObjTp=Symbol
+Name=Time Date for Scheduling v1.1
+Code=1
+SmplCName=Time Date for Scheduling v1.1.umc
+Smpl-C=3
+CompilerTimePrecision=Single_Or_Double_Precision
+Exclusions=1,19,20,21,88,89,310,718,756,854,
+Hint=Time and Date for Scheduling v1.1
+SMWRev=0
+TIORev=0
+S+=1
+HelpID=1055
+APg=1
+StdCmd=0
+FltTmp=1
+FpCS=0
+NumFixedInputs=8
+NumFixedOutputs=10
+MinVariableInputs=0
+MinVariableInputsList2=0
+MinVariableInputsList3=0
+MinVariableOutputs=0
+MinVariableOutputsList2=0
+MinVariableOutputsList3=0
+MinVariableParams=0
+SymbolTree=13
+OutputSigType1=Analog
+OutputSigType2=Analog
+OutputSigType3=Analog
+OutputSigType4=Analog
+OutputSigType5=Analog
+OutputSigType6=Analog
+OutputSigType7=Analog
+OutputSigType8=Serial
+ParamSigType1=Time|Percent|Constant|String|FileName|HexAddress|Any
+InputCue1=Enable==1
+InputCue2=Display_Time_In_24_Hr==0
+InputCue3=Display_Time_With_Seconds==0
+InputCue4=Display_Date_In_Long==1
+InputCue5=Display_Date_In_Short==0
+InputCue6=Display_Year_In_4_Digits==1
+InputCue7=Display_Year_In_2_Digits==0
+InputCue8=Refresh
+OutputCue1=Month
+OutputCue2=Day
+OutputCue3=Year
+OutputCue4=Day_Of_Week
+OutputCue5=Hours
+OutputCue6=Minutes
+OutputCue7=Seconds
+OutputCue8=Date$
+OutputCue9=Time$
+OutputCue10=Day_Of_Week$
+ParamCue1=p1
+FileName=Time Date for Scheduling v1.1.umc
+EncodingType=0
+ZeroOnIoOk=0
+]
+[
+ObjTp=Sm
+H=1
+SmC=157
+Nm=Central Control Modules
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=2
+SmC=157
+Nm=Network Modules
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=3
+SmC=157
+Nm=Ethernet
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=4
+SmC=156
+Nm=Logic
+ObjVer=1
+CF=2
+mC=2
+C1=9
+C2=8
+]
+[
+ObjTp=Sm
+H=5
+SmC=157
+Nm=DefineArguments
+ObjVer=1
+CF=2
+n1I=1
+n1O=1
+mC=1
+C1=6
+mI=1
+mO=1
+tO=1
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=6
+SmC=55
+Nm=Argument Definition
+ObjVer=1
+PrH=5
+CF=2
+n1I=8
+n1O=10
+mI=8
+I1=11
+I2=14
+I3=23
+I4=15
+I5=24
+I6=19
+I7=18
+I8=13
+mO=10
+tO=10
+O1=4
+O2=5
+O3=6
+O4=7
+O5=10
+O6=8
+O7=9
+O8=20
+O9=21
+O10=22
+mP=1
+P1=
+]
+[
+ObjTp=Sm
+H=8
+SmC=8
+Nm=Oscillator
+ObjVer=1
+PrH=4
+CF=2
+n1I=1
+n1O=1
+mI=1
+I1=11
+mO=1
+tO=1
+O1=12
+mP=2
+P1=0.1s
+P2=0.9s
+]
+[
+ObjTp=Sm
+H=9
+SmC=103
+Nm=Time Date Drive v1.1 Processor.usp
+ObjVer=1
+PrH=4
+CF=2
+n1I=8
+mI=8
+I1=12
+I2=14
+I3=23
+I4=15
+I5=24
+I6=19
+I7=18
+I8=13
+mO=10
+tO=10
+O1=4
+O2=5
+O3=6
+O4=7
+O5=10
+O6=8
+O7=9
+O8=20
+O9=21
+O10=22
+mP=1
+P1=
+]
+[
+ObjTp=Sg
+H=4
+Nm=Month
+SgTp=2
+]
+[
+ObjTp=Sg
+H=5
+Nm=Day
+SgTp=2
+]
+[
+ObjTp=Sg
+H=6
+Nm=Year
+SgTp=2
+]
+[
+ObjTp=Sg
+H=7
+Nm=Day_Of_Week
+SgTp=2
+]
+[
+ObjTp=Sg
+H=8
+Nm=Minutes
+SgTp=2
+]
+[
+ObjTp=Sg
+H=9
+Nm=Seconds
+SgTp=2
+]
+[
+ObjTp=Sg
+H=10
+Nm=Hours
+SgTp=2
+]
+[
+ObjTp=Sg
+H=11
+Nm=Enable==1
+]
+[
+ObjTp=Sg
+H=12
+Nm=get_time
+]
+[
+ObjTp=Sg
+H=13
+Nm=Refresh
+]
+[
+ObjTp=Sg
+H=14
+Nm=Display_Time_In_24_Hr==0
+]
+[
+ObjTp=Sg
+H=15
+Nm=Display_Date_In_Long==1
+]
+[
+ObjTp=Sg
+H=18
+Nm=Display_Year_In_2_Digits==0
+]
+[
+ObjTp=Sg
+H=19
+Nm=Display_Year_In_4_Digits==1
+]
+[
+ObjTp=Sg
+H=20
+Nm=Date$
+SgTp=4
+]
+[
+ObjTp=Sg
+H=21
+Nm=Time$
+SgTp=4
+]
+[
+ObjTp=Sg
+H=22
+Nm=Day_Of_Week$
+SgTp=4
+]
+[
+ObjTp=Sg
+H=23
+Nm=Display_Time_With_Seconds==0
+]
+[
+ObjTp=Sg
+H=24
+Nm=Display_Date_In_Short==0
+]
